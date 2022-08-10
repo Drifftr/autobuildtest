@@ -23,7 +23,7 @@ jobs:
           type: read
       - name: Ballerina Build
         run: |
-          sudo CI_BUILD=true BALLERINA_DEV_CENTRAL=true bal build --sticky --export-openapi --generate-config-schema
+          bal build --sticky --export-openapi --generate-config-schema
       - name: Run Python Script
         run: python .github/workflows/flowsupport.py
 
