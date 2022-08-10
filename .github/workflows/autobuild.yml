@@ -24,6 +24,7 @@ jobs:
       - run: ls -la /__t/Python/3.10.6/x64/bin/
       - run: chown -R root /__t/Python/3.10.6/x64/bin/
       - run: chmod 777 /__t/Python/3.10.6/x64/bin/
+      - run: ls -la /__t/Python/3.10.6/x64/bin/
       - run: pwd
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
