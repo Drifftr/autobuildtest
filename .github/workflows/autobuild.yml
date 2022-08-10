@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       TEMPLATE: service
+      pythonPath: /__t/Python/3.10.6/x64/
     container:
       image: ballerina/ballerina:2201.1.1
       options: --user root
