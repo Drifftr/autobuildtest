@@ -20,7 +20,12 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - run: python3 .github/workflows/flowsupport.py
+      - run: type -a python
+      - run: which python
+      - run: apt-get install python
+      - run: type -a python
+      - run: which python
+      - run: python .github/workflows/flowsupport.py
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
