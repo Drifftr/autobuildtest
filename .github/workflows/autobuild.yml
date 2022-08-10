@@ -8,7 +8,7 @@ name: Auto Build Action Test
         default: N/A
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       TEMPLATE: service
     container:
