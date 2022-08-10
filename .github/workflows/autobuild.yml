@@ -1,0 +1,25 @@
+name: Auto Build Action Test
+"on":
+  workflow_dispatch:
+    inputs:
+      configurables:
+        description: configurables list json
+        required: true
+        default: N/A
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TEMPLATE: service
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v2
+      - name: Choreo Toml Parser
+        uses: choreo-templates/ballerina-toml-parser@v2
+        with:
+          type: read
+      - name: Ballerina Build
+        run: |
+          sudo CI_BUILD=true BALLERINA_DEV_CENTRAL=true bal build --sticky --export-openapi --generate-config-schema
+
+      
