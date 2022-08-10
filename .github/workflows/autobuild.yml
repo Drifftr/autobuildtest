@@ -8,7 +8,7 @@ name: Auto Build Action Test
         default: N/A
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       TEMPLATE: service
     container:
@@ -19,8 +19,6 @@ jobs:
         uses: actions/checkout@v2
       - run: pwd
       - run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-      - run: python3 -m ensurepip
-      - run: pip3 install --no-cache --upgrade pip setuptools
       - run: which python3 
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
