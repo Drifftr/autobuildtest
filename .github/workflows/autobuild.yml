@@ -23,26 +23,13 @@ jobs:
       - run: type -a python
       - run: which python
       - run: pwd
-      - name: Inline python step
-        run: |
-          import os 
-          import json
-          import urllib
-
-          def readJson(path) :
-            with open(path) as json_file:
-              data = json.load(json_file)
-              return data
-          print(os.environ['PATH'])
-          for f in os.listdir("."):
-            print(f)
-          path = os.environ['GITHUB_EVENT_PATH']
-          print('Event path is %s' % path)
-          event = readJson(path)
-          print(json.dumps(event,indent=2))
-          url = event['head_commit']['url']
-          print('HEAD is at %s' % url)
-        shell: python
+      - uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            import os
+            print("Directory contents:")
+            for f in os.listdir():
+                print(f)
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
