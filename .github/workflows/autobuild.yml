@@ -13,10 +13,14 @@ jobs:
       TEMPLATE: service
     container:
       image: ballerina/ballerina:2201.1.1
+      options: --user root
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
-      - uses: actions/setup-python@v3.1.1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: python .github/workflows/flowsupport.py
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
@@ -26,5 +30,6 @@ jobs:
           bal build --sticky --export-openapi --generate-config-schema
       - name: Run Python Script
         run: python .github/workflows/flowsupport.py
+        
 
       
