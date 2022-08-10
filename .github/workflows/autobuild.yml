@@ -17,6 +17,7 @@ jobs:
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
