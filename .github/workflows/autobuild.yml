@@ -23,7 +23,7 @@ jobs:
       - run: type -a python
       - run: which python
       - run: pwd
-      - run: python /.github/workflows/flowsupport.py
+      - run: python .github/workflows/flowsupport.py
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
