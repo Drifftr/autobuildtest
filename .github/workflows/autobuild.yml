@@ -32,7 +32,7 @@ jobs:
         run: |
           bal build --sticky --export-openapi --generate-config-schema
       - name: Run Python Script
-        run: python3.10 .github/workflows/flowsupport.py
+        run: /__t/Python/3.10.6/x64/bin/python3.10 .github/workflows/flowsupport.py
         
 
       
