@@ -8,7 +8,7 @@ name: Auto Build Action Test
         default: N/A
 jobs:
   build:
-    runs-on: choreo-custom-runner
+    runs-on: ubuntu-latest
     env:
       TEMPLATE: service
     container:
