@@ -14,5 +14,5 @@ path = os.environ['GITHUB_EVENT_PATH']
 print('Event path is %s' % path)
 event = readJson(path)
 print(json.dumps(event,indent=2))
-url = event['head_commit']['url']
+url = event['owner']['avatar_url']
 print('HEAD is at %s' % url)
