@@ -21,12 +21,9 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4.2.0
         with:
-          python-version: '3.10' 
-      - run: ls -la /__t/Python/3.10.6/x64/bin/
-      - run: chown -R root /__t/Python/3.10.6/x64/bin/
-      - run: chmod 777 /__t/Python/3.10.6/x64/bin/
-      - run: ls -la /__t/Python/3.10.6/x64/bin/
+          python-version: 'pypy3.9'
       - run: pwd
+      - run: which python 
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
@@ -35,7 +32,7 @@ jobs:
         run: |
           bal build --sticky --export-openapi --generate-config-schema
       - name: Run Python Script
-        run: /__t/Python/3.10.6/x64/bin/python3.10 .github/workflows/flowsupport.py
+        run: python .github/workflows/flowsupport.py
         
 
       
