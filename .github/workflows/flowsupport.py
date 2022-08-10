@@ -1,2 +1,1 @@
-def main():
-  print("Hello from the script")
+print("Hello from the script")
