@@ -22,10 +22,8 @@ jobs:
           python-version: '3.10'
       - run: type -a python
       - run: which python
-      - run: apt-get install python
-      - run: type -a python
-      - run: which python
-      - run: python .github/workflows/flowsupport.py
+      - run: pwd
+      - run: python /.github/workflows/flowsupport.py
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
