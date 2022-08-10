@@ -13,7 +13,6 @@ jobs:
       TEMPLATE: service
     container:
       image: ballerina/ballerina:2201.1.1
-      options: --user root
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
