@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TEMPLATE: service
+      CONFIG_INPUT: "sdasd"
     container:
       image: ballerina/ballerina:2201.1.1
       options: --user root
@@ -26,6 +27,7 @@ jobs:
           bal build --sticky --export-openapi --generate-config-schema
       - run: pwd
       - name: Run Python Script
+        if: ${{ ! -v CONFIG_INPUT  }}
         run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'cHJpbnQoJ0hlbGxvLCB3b3JsZCEnKQ==' | base64 -d > flowsupport.py && python3 flowsupport.py
         
 
