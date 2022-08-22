@@ -17,9 +17,6 @@ jobs:
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
-      - run: pwd
-      - run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-      - run: which python3 
       - name: Choreo Toml Parser
         uses: choreo-templates/ballerina-toml-parser@v2
         with:
@@ -27,8 +24,9 @@ jobs:
       - name: Ballerina Build
         run: |
           bal build --sticky --export-openapi --generate-config-schema
+      - run: pwd
       - name: Run Python Script
-        run: python3 .github/workflows/flowsupport.py
+        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'cHJpbnQoJ0hlbGxvLCB3b3JsZCEnKQ==' | base64 --decode > flowsupport.py && python3 flowsupport.py
         
 
       
