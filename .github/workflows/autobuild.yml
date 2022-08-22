@@ -12,7 +12,7 @@ jobs:
     env:
       TEMPLATE: service
       ORG_NAME: heshithahettihewa
-      MODULE_NAME: default_webhook_ww
+      MODULE_NAME: autobuildtest
       CONFIG_INPUT: sdas
     container:
       image: ballerina/ballerina:2201.1.1
