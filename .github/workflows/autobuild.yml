@@ -4,8 +4,7 @@ name: Auto Build Action Test
     inputs:
       configurables:
         description: configurables list json
-        required: true
-        default: N/A
+        required: false
 jobs:
   build:
     runs-on: ubuntu-latest
