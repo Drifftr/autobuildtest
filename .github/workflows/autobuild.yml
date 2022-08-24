@@ -32,7 +32,7 @@ jobs:
         if: ${{ github.event.inputs.configurables != '' }}
         env:
           CONFIG_INPUT: ${{ github.event.inputs.configurables }}
-        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'aW1wb3J0IG9zCgpkYXRhRiA9IG9zLmdldGVudignQ09ORklHX0lOUFVUJykKcHJpbnQoZGF0YUYp=' | base64 -d > flowsupport.py && python3 flowsupport.py && if [[ ${{env.CONFIG_MATCH}} != '' && ${{env.CONFIG_MATCH}} == 'False' ]]; then echo "Configurable feilds doesn't match, Please retry a manual deployment providing all the corresponding values"; exit 1; else echo "Configurable Check Success"; fi;
+        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'aW1wb3J0IG9zCgpkYXRhRiA9IG9zLmdldGVudignQ09ORklHX0lOUFVUJykKcHJpbnQoZGF0YUYp=' | base64 -d > flowsupport.py && python3 flowsupport.py && echo $CONFIG_MATCH; && if [[ $CONFIG_MATCH != '' && $CONFIG_MATCH == 'False' ]]; then echo "Configurable feilds doesn't match, Please retry a manual deployment providing all the corresponding values"; exit 1; else echo "Configurable Check Success"; fi;
         
 
       
