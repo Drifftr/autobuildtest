@@ -32,7 +32,7 @@ jobs:
         if: ${{ github.event.inputs.configurables != '' }}
         env:
           CONFIG_INPUT: ${{ github.event.inputs.configurables }}
-        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'aW1wb3J0IG9zCgpkYXRhRiA9IG9zLmdldGVudignQ09ORklHX0lOUFVUJykKbG9wID0gRmFsc2UKcHJpbnQobG9wKQpwcmludChkYXRhRikKCmlmIGNvbmZpZ01hdGNoOgogICAgc3VjY2Vzc01zZyA9ICJDb25maWd1cmFibGUgQ2hlY2sgU3VjY2VzcyIKICAgIHByaW50KHN1Y2Nlc3NNc2cpCmVsc2U6CiAgICBlcnJNc2cgPSAiQ29uZmlndXJhYmxlIGZpZWxkcyBkb2Vzbid0IG1hdGNoLCBQbGVhc2UgcmV0cnkgYSBtYW51YWwgZGVwbG95bWVudCBwcm92aWRpbmcgYWxsIHRoZSBjb3JyZXNwb25kaW5nIGNvbmZpZ3VyYWJsZSB2YWx1ZXMiCiAgICBwcmludChlcnJNc2cpCiAgICBzeXMuZXhpdChlcnJNc2cp' | base64 -d > flowsupport.py && python3 flowsupport.py
+        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'aW1wb3J0IG9zCgpkYXRhRiA9IG9zLmdldGVudignQ09ORklHX0lOUFVUJykKbG9wID0gRmFsc2UKcHJpbnQobG9wKQpwcmludChkYXRhRikKCmlmIGxvcDoKICAgIHN1Y2Nlc3NNc2cgPSAiQ29uZmlndXJhYmxlIENoZWNrIFN1Y2Nlc3MiCiAgICBwcmludChzdWNjZXNzTXNnKQplbHNlOgogICAgZXJyTXNnID0gIkNvbmZpZ3VyYWJsZSBmaWVsZHMgZG9lc24ndCBtYXRjaCwgUGxlYXNlIHJldHJ5IGEgbWFudWFsIGRlcGxveW1lbnQgcHJvdmlkaW5nIGFsbCB0aGUgY29ycmVzcG9uZGluZyBjb25maWd1cmFibGUgdmFsdWVzIgogICAgcHJpbnQoZXJyTXNnKQogICAgc3lzLmV4aXQoZXJyTXNnKQ==' | base64 -d > flowsupport.py && python3 flowsupport.py
       - name: Evaluate Config Match Output
         if: ${{ github.event.inputs.configurables != ''}}
         run: exit 1
