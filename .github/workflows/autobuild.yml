@@ -32,7 +32,7 @@ jobs:
         if: ${{ github.event.inputs.configurables != '' }}
         env:
           CONFIG_INPUT: ${{ github.event.inputs.configurables }}
-        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'aW1wb3J0IG9zCgpkYXRhRiA9IG9zLmdldGVudignQ09ORklHX0lOUFVUJykKbG9wID0gRmFsc2UKcHJpbnQobG9wKQpwcmludChkYXRhRikKCmVudl9maWxlID0gb3MuZ2V0ZW52KCdHSVRIVUJfRU5WJykKCndpdGggb3BlbihlbnZfZmlsZSwgImEiKSBhcyBteWZpbGU6CiAgICBteWZpbGUud3JpdGUoIkNPTkZJR19NQVRDSD0iICsgc3RyKGxvcCkuc3RyaXAoKSk=' | base64 -d > flowsupport.py && python3 flowsupport.py && echo "Config is " + $CONFIG_MATCH
+        run: apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python && echo 'aW1wb3J0IG9zCgpkYXRhRiA9IG9zLmdldGVudignQ09ORklHX0lOUFVUJykKbG9wID0gRmFsc2UKcHJpbnQobG9wKQpwcmludChkYXRhRikKCmVudl9maWxlID0gb3MuZ2V0ZW52KCdHSVRIVUJfRU5WJykKCndpdGggb3BlbihlbnZfZmlsZSwgImEiKSBhcyBteWZpbGU6CiAgICBteWZpbGUud3JpdGUoIkNPTkZJR19NQVRDSD1ObyIp' | base64 -d > flowsupport.py && python3 flowsupport.py && echo "Config is " + $CONFIG_MATCH
         
 
       
